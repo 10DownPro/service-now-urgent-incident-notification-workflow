@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2025-07-30 21:23:44">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Fixes critical network incident alerts by sending emails to Network Ops</description>
+<inserted/>
+<name>Urgent Incident Notification Workflow</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>8bc3923d838322107f446f550cda1e0d</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-30 21:23:44</sys_created_on>
+<sys_id>5126567183c322107f446f550cda1e61</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-30 21:23:44</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+</unload>
