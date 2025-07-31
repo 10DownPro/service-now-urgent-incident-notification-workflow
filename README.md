@@ -1,6 +1,6 @@
 # ‼️ Critical Incident Alerts in ServiceNow (Built with Flow Designer)
 
-This project was built in response to a simulated incident at Uber, where a critical network outage in San Francisco went unnoticed for 2 hours due to a broken alert system. I created a ServiceNow workflow that automatically sends real-time email notifications to the Network Operations team when a critical incident is detected — helping prevent future SLA breaches and delays.
+This project was built in response to a simulated incident at Uber, where a critical network outage in San Francisco went unnoticed for 2 hours due to a broken alert system. I created a ServiceNow workflow that automatically sends real-time email notifications to the Network Operations team when a critical incident is detected.. helping prevent future SLA breaches and delays.
 
 ## 📁 Project Files
 
@@ -33,7 +33,10 @@ This flow triggers only when an incident is created with `Category = Network` an
 <img width="1200" height="559" alt="Trigger Conditions" src="https://github.com/user-attachments/assets/b2018bda-1201-4f0b-a2d6-429c860c0738" />
 
 **📨 Email Action Setup**  
-The flow sends an email alert to the Networking Operations group when the conditions are met.  
+The flow sends an email alert to the Networking Operations group when the conditions are met.
+
+**🛡️ Security & Access Control Note:** Only engineers in the Networking Operations group receive the alert — keeping sensitive data within the right hands & avoiding notification overload.
+
 <img width="1203" height="604" alt="Email Action" src="https://github.com/user-attachments/assets/b99cb0bd-2765-4adc-80da-6659b04c7d19" />
 
 **🧪 Test Incident Record**  
@@ -74,7 +77,7 @@ Once I did that, both records appeared in the `Customer Updates` tab and were in
 
 ## 🤖 AI Scenario: Smarter Incident Routing
 
-Right now, incidents just trigger a standard email based on priority and category — but AI could take that to the next level. Instead of just alerting whoever's on the list, an AI agent could route incidents based on who’s actually available, what timezone they’re in, and which engineers have handled similar issues before. It could even learn over time which people resolve issues fastest and prioritize them first. That would cut down response time big time and help avoid escalation. For example, if a critical incident happens at 2AM in San Francisco, the system could automatically ping someone in a different region who's skilled and online instead of waiting for a local engineer to wake up. Basically, AI could make sure incidents go to the *right* person, not just *any* person at the best time.
+Right now, incidents just trigger a standard email based on priority and category, but AI could take that to the next level. Instead of just alerting whoever's on the list, an AI agent could route incidents based on who’s actually available, what timezone they’re in, and which engineers have handled similar issues before. It could even learn over time which people resolve issues fastest and prioritize them first. That would cut down response time big time and help avoid escalation. For example, if a critical incident happens at 2AM in San Francisco, the system could automatically ping someone in a different region who's skilled and online instead of waiting for a local engineer to wake up. Basically, AI could make sure incidents go to the *right* person, not just *any* person at the best time.
 
 
 ---
