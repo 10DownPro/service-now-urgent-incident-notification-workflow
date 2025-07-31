@@ -7,7 +7,7 @@ This is a ServiceNow workflow I built to automatically send email alerts when a 
 /service-now-urgent-incident-notification-workflow<br>
 ├── Diagram.png  
 ├── README.md  
-├── urgent-incident-notification-workflow.xml  
+├── service-now-urgent-incident-notification-workflow.xml  
 
 ## ✅ What It Does
 
