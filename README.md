@@ -7,7 +7,7 @@ This project was built in response to a simulated incident at Uber, where a crit
 /service-now-urgent-incident-notification-workflow<br>
 ├── Diagram.png  
 ├── README.md  
-├── service-now-urgent-incident-notification-workflow.xml  
+├── urgent-incident-notification-workflow..xml  
 
 ## ✅ What It Does
 
