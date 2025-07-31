@@ -77,7 +77,7 @@ Once I did that, both records appeared in the `Customer Updates` tab and were in
 
 ## 🤖 AI Scenario: Smarter Incident Routing
 
-Right now, incidents just trigger a standard email based on priority and category, but AI could take that to the next level. Instead of just alerting whoever's on the list, an AI agent could route incidents based on who’s actually available, what timezone they’re in, and which engineers have handled similar issues before. It could even learn over time which people resolve issues fastest and prioritize them first. That would cut down response time big time and help avoid escalation. For example, if a critical incident happens at 2AM in San Francisco, the system could automatically ping someone in a different region who's skilled and online instead of waiting for a local engineer to wake up. Basically, AI could make sure incidents go to the *right* person, not just *any* person at the best time.
-
+Right now, incidents just trigger a standard email based on priority and category. It gets the job done, but there’s room for more. AI could take that to the next level.
+Instead of alerting whoever’s on the list, an agent could route incidents based on real-time availability, timezone, and past issue history. It could learn over time who resolves issues fastest and prioritize them first. That would cut down response time and reduce escalations tremendously. For example, if a critical incident hits at 2AM in San Francisco, the system could ping someone in another region who’s online and skilled—no waiting for someone local to wake up. I’ve worked on deployments where that kind of flexibility would’ve saved hours. AI can help make sure incidents reach the right person, not just any person and it does it when it matters most.
 
 ---
