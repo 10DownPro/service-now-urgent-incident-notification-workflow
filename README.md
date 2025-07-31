@@ -1,4 +1,4 @@
-# ⚡️ Critical Incident Alerts in ServiceNow (Built with Flow Designer)
+# ‼️ Critical Incident Alerts in ServiceNow (Built with Flow Designer)
 
 This is a ServiceNow workflow I built to automatically send email alerts when a critical network incident happens. It helps make sure the right team (Network Operations) is notified right away so they can jump in and fix the issue fast.
 
