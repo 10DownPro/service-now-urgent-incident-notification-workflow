@@ -18,8 +18,8 @@ This project simulates the fix. I used ServiceNow's Flow Designer to build an au
 ## ✅ What It Does
 
 - Listens for new incidents with:
-  - Category: 🔴 **[Network]**
-  - Priority: 🔴 **[1 - Critical]**
+  - Category: **[Network]**
+  - Priority: **[1 - Critical]**
 - Sends an email alert to the **Networking Operations** group
 - Prevents SLA breaches by speeding up response time
 - Ensures alerts go only to on-call engineers
