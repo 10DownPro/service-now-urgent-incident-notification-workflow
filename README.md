@@ -1,8 +1,8 @@
 # 🚨 Preventing SLA Breaches with a Critical Alert Workflow in ServiceNow
 
-*Scenario:** When a network outage hit Uber's San Francisco data center and went unnoticed for two hours, the business took a hit. Thousands of riders and drivers were affected, and Uber faced revenue loss and regulatory heat all because a critical alert never reached the right people.
+**Scenario:** A network outage hits Uber's San Francisco data center and goes unnoticed for two hours. Uber takes a takes a hit. Thousands of riders and drivers are affected, and Uber faces revenue loss and regulatory issues, all because a critical alert never reaches the right people.
 
-This project simulates the fix. I used ServiceNow's Flow Designer to build an automated workflow that detects critical network incidents and instantly sends email alerts to the Networking Operations team. It’s simple, but powerful, and built to make sure engineers don’t miss what matters most.
+This project simulates the fix. I used ServiceNow's Flow Designer to build an automated workflow that detects critical network incidents and instantly sends email alerts to the Networking Operations team. I also added a UI Policy to catch mistakes early. It warns users if they log a network issue without marking it as critical. It’s a simple but powerful solution designed to make sure engineers don’t miss what matters most, and users don't under-prioritize something that could potentially bring systems down.
 
 ---
 
@@ -65,7 +65,7 @@ This record confirms that the system triggered an actual email alert based on th
 I made sure the Networking Operations group had a working email address so alerts could be received.  
 <img width="1261" height="596" alt="Group Record" src="https://github.com/user-attachments/assets/b41df41f-bcea-4438-86da-64cab62eb503" />
 
-**✅ UI Policy: Warn When Network Incidents Aren’t Marked Critical**
+**✅ UI Policy: Warns Users When Network Incidents Aren’t Marked Critical**
 I created a UI Policy to add an extra layer of accountability. It checks for network related incidents that aren’t marked as “Critical.” If someone sets the category to “Network” but chooses a lower priority, the system will show a warning directly on the form.
 
 What It Does:
@@ -133,3 +133,7 @@ Right now, incidents just trigger a standard email based on priority and categor
 ## 💭 What I Took Away
 
 This project reminded me that the smallest missing piece like a broken email alert can have a massive impact. I didn’t just fix a flow, I designed something that could actually prevent chaos. That’s what I love about tech.. solving problems that matter, one workflow at a time.
+
+## Acknowledgments
+Parts of the UI Policy validation script were generated with help from ChatGPT by OpenAI to help speed up development.
+
