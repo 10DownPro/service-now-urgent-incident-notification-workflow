@@ -1,55 +1,71 @@
-# ‼️ Critical Incident Alerts in ServiceNow (Built with Flow Designer)
+# 🚨 Preventing SLA Breaches with a Critical Alert Workflow in ServiceNow
 
-This project was built in response to a simulated incident at Uber, where a critical network outage in San Francisco went unnoticed for 2 hours due to a broken alert system. I created a ServiceNow workflow that automatically sends real-time email notifications to the Network Operations team when a critical incident is detected.. helping prevent future SLA breaches and delays.
+When a network outage hit Uber's San Francisco data center and went unnoticed for two hours, the business took a hit. Thousands of riders and drivers were affected, and Uber faced revenue loss and regulatory heat all because a critical alert never reached the right people.
+
+This project simulates the fix. I used ServiceNow's Flow Designer to build an automated workflow that detects critical network incidents and instantly sends email alerts to the Networking Operations team. It’s simple, but powerful, and built to make sure engineers don’t miss what matters most.
+
+---
 
 ## 📁 Project Files
 
-/service-now-urgent-incident-notification-workflow<br>
+/service-now-urgent-incident-notification-workflow  
 ├── Diagram.png  
 ├── README.md  
-├── urgent-incident-notification-workflow..xml  
+├── urgent-incident-notification-workflow.xml  
+
+---
 
 ## ✅ What It Does
 
 - Listens for new incidents with:
-  - Category: **Network**
-  - Priority: **1 - Critical**
-- Sends an email alert to the **Network Operations** group
-- Helps prevent SLA breaches by speeding up response time
+  - Category: 🔴 **[Network]**
+  - Priority: 🔴 **[1 - Critical]**
+- Sends an email alert to the **Networking Operations** group
+- Prevents SLA breaches by speeding up response time
+- Ensures alerts go only to on-call engineers
+
+---
 
 ## 📊 Incident Notification Flow
 
-This diagram shows how the workflow is triggered when a critical network incident is created, and how it routes the alert to the Network Operations team.
+This diagram shows how the workflow is triggered when a critical network incident is created and how it routes the alert to the Networking Operations team.
 
 ![Architecture Diagram](https://github.com/user-attachments/assets/d8d432b0-b979-4085-855b-ce7c258b4796)
 
-## 🔧 Implementation Summary
+---
 
-- Edited the default "Kura Workload 1" flow
-- Updated trigger conditions for category (Network) + priority (Critical 1)
+## 🔧 Implementation Walkthrough
+
+I started by reviewing the “Kura Workload 1” flow and quickly saw the issue: it wasn’t filtering for the right type of incidents. There were no conditions set for *Network* category or *Critical* priority.
+
+I fixed that by updating the trigger so it only runs when both are true.
 
 **🔁 Updated Trigger Conditions**  
-This flow triggers only when an incident is created with `Category = Network` and `Priority = 1 - Critical`.  
+This flow now triggers only when an incident is created with `Category = Network` and `Priority = 1 - Critical`.  
 <img width="1200" height="559" alt="Trigger Conditions" src="https://github.com/user-attachments/assets/b2018bda-1201-4f0b-a2d6-429c860c0738" />
 
+Once the flow knows an urgent incident is happening, I added an action that sends an email to the Networking Operations group.
+
 **📨 Email Action Setup**  
-The flow sends an email alert to the Networking Operations group when the conditions are met.
-
-**🛡️ Security & Access Control Note:** Only engineers in the Networking Operations group receive the alert — keeping sensitive data within the right hands & avoiding notification overload.
-
+The flow sends an email alert to the Networking Operations group when the conditions are met.  
+🛡️ **Access Control Note:** Only engineers in the Networking Operations group receive the alert — keeping sensitive data secure and avoiding unnecessary noise.  
 <img width="1203" height="604" alt="Email Action" src="https://github.com/user-attachments/assets/b99cb0bd-2765-4adc-80da-6659b04c7d19" />
 
+Then I created a sample incident to test it all end to end.
+
 **🧪 Test Incident Record**  
-I created a sample incident to simulate a real-world network outage.  
+I logged a test incident with the correct category and priority to simulate a real-world outage.  
 <img width="1202" height="611" alt="Test Incident" src="https://github.com/user-attachments/assets/c37970e0-84ba-48bd-a0c1-ff826a958c30" />
 
 **📬 Email Log (sys_email Record)**  
-This record confirms the email notification was successfully generated and sent.  
+This record confirms that the system triggered an actual email alert based on the flow.  
 <img width="1261" height="594" alt="Email Log" src="https://github.com/user-attachments/assets/bcdee7b3-b76b-40cd-aa5f-45736069f8cc" />
 
 **👥 User Group Record (Networking Operations)**  
-The Networking Operations group was updated with a valid email address to receive alerts.  
+I made sure the Networking Operations group had a working email address so alerts could be received.  
 <img width="1261" height="596" alt="Group Record" src="https://github.com/user-attachments/assets/b41df41f-bcea-4438-86da-64cab62eb503" />
+
+---
 
 ## ⚠️ Troubleshooting: What I Ran Into
 
@@ -67,7 +83,7 @@ I forgot to set my custom update set (`Kura Workload 1`) as **Current** before a
 - Then clicked **Set as Current**
 - Re-added the test incident and email record using **“Add to Update Set”** on both records
 
-Once I did that, both records appeared in the `Customer Updates` tab and were included in the final exported XML file.
+After I did that, both records appeared in the `Customer Updates` tab and were included in the final exported XML file.
 
 **Before:**  
 <img width="1041" height="344" alt="Before Fix" src="https://github.com/user-attachments/assets/d2ea15f5-1d03-4af3-8d7c-506f9a5f5ede" />
@@ -75,9 +91,14 @@ Once I did that, both records appeared in the `Customer Updates` tab and were in
 **After:**  
 <img width="1202" height="591" alt="After Fix" src="https://github.com/user-attachments/assets/6fe91ad2-a7e2-403d-b987-45d1ae4c9062" />
 
+---
+
 ## 🤖 AI Scenario: Smarter Incident Routing
 
-Right now, incidents just trigger a standard email based on priority and category. It gets the job done, but there’s room for more. AI could take that to the next level.
-Instead of alerting whoever’s on the list, an agent could route incidents based on real-time availability, timezone, and past issue history. It could learn over time who resolves issues fastest and prioritize them first. That would cut down response time and reduce escalations tremendously. For example, if a critical incident hits at 2AM in San Francisco, the system could ping someone in another region who’s online and skilled—no waiting for someone local to wake up. I’ve worked on deployments where that kind of flexibility would’ve saved hours. AI can help make sure incidents reach the right person, not just any person and it does it when it matters most.
+Right now, incidents just trigger a standard email based on priority and categor, but AI could take that to the next level. Instead of just alerting whoever's on the list, an AI agent could route incidents based on who’s actually available, what timezone they’re in, and which engineers have handled similar issues before. Over time it could even learn who resolves issues fastest and prioritize them first. That would cut down response time and help avoid escalation. For example, if a critical incident happens at 2AM in San Francisco, the system could automatically ping someone in a different region who's skilled and online instead of waiting for a local engineer to wake up. Basically, AI could make sure incidents go to the *right* person, not just *any* person at the best time.
 
 ---
+
+## 💭 What I Took Away
+
+This project reminded me that the smallest missing piece like a broken email alert can have a massive impact. I didn’t just fix a flow, I designed something that could actually prevent chaos. And that’s what I love about tech.. solving problems that matter, one workflow at a time.
