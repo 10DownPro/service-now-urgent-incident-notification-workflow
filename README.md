@@ -26,6 +26,15 @@ This project simulates the fix. I used ServiceNow's Flow Designer to build an au
 
 ---
 
+## 🧨 What Was Broken (Before the Fix)
+
+This is what the original flow looked like before I made any changes. It wasn't filtering for critical network incidents, so no alerts were getting triggered when they should’ve.
+
+<img width="744" height="386" alt="Screenshot 2025-08-01 at 5 07 32 PM" src="https://github.com/user-attachments/assets/53c008a5-6b06-419f-8a41-66354b0acca3" />
+
+<img width="748" height="428" alt="Screenshot 2025-08-01 at 5 08 07 PM" src="https://github.com/user-attachments/assets/f2472024-15ee-4f21-bf03-8b728f46393a" />
+
+
 ## 📊 Incident Notification Flow
 
 This diagram shows how the workflow is triggered when a critical network incident is created and how it routes the alert to the Networking Operations team.
