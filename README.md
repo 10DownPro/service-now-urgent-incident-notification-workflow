@@ -48,7 +48,7 @@ Once the flow knows an urgent incident is happening, I added an action that send
 
 **📨 Email Action Setup**  
 The flow sends an email alert to the Networking Operations group when the conditions are met.  
-🛡️ **Access Control Note:** Only engineers in the Networking Operations group receive the alert — keeping sensitive data secure and avoiding unnecessary noise.  
+**🛡️ Access Control Note:** Only engineers in the Networking Operations group receive the alert — keeping sensitive data secure and avoiding unnecessary noise.  
 <img width="1203" height="604" alt="Email Action" src="https://github.com/user-attachments/assets/b99cb0bd-2765-4adc-80da-6659b04c7d19" />
 
 Then I created a sample incident to test it all end to end.
@@ -64,6 +64,37 @@ This record confirms that the system triggered an actual email alert based on th
 **👥 User Group Record (Networking Operations)**  
 I made sure the Networking Operations group had a working email address so alerts could be received.  
 <img width="1261" height="596" alt="Group Record" src="https://github.com/user-attachments/assets/b41df41f-bcea-4438-86da-64cab62eb503" />
+
+**✅ UI Policy: Warn When Network Incidents Aren’t Marked Critical**
+I created a UI Policy to add an extra layer of accountability. It checks for network related incidents that aren’t marked as “Critical.” If someone sets the category to “Network” but chooses a lower priority, the system will show a warning directly on the form.
+
+What It Does:
+If the category is Network and the priority is not set to 1 - Critical, then the user will see this message:
+
+⚠️ Network incidents are usually high priority. Confirm this is not critical.
+
+💻 How I Built It:
+**Table:** Incident
+
+**Conditions:**
+
+Category is Network
+
+Priority is not 1 - Critical
+
+Script (Run if True):
+
+<pre> ```javascript function onCondition() { g_form.showFieldMsg( 'priority', '⚠️ Network incidents are usually high priority. Confirm this is not critical.', 'warning' ); } ``` </pre>
+
+**1. UI Policy Conditions Setup**
+<img width="1077" height="571" alt="Screenshot 2025-08-01 at 2 53 00 PM" src="https://github.com/user-attachments/assets/a2a1c452-230a-43e4-89a9-d9e401d2052e" />
+
+**2. Script Tab with Message**
+<img width="1075" height="580" alt="Screenshot 2025-08-01 at 2 53 28 PM" src="https://github.com/user-attachments/assets/4083eb63-405e-40be-854c-5078a8eea5d5" />
+
+**3. Warning Displayed on Form**
+<img width="1077" height="531" alt="Screenshot 2025-08-01 at 2 54 54 PM" src="https://github.com/user-attachments/assets/ccad7300-520b-453c-854d-8b3a0ec902eb" />
+
 
 ---
 
@@ -95,10 +126,10 @@ After I did that, both records appeared in the `Customer Updates` tab and were i
 
 ## 🤖 AI Scenario: Smarter Incident Routing
 
-Right now, incidents just trigger a standard email based on priority and categor, but AI could take that to the next level. Instead of just alerting whoever's on the list, an AI agent could route incidents based on who’s actually available, what timezone they’re in, and which engineers have handled similar issues before. Over time it could even learn who resolves issues fastest and prioritize them first. That would cut down response time and help avoid escalation. For example, if a critical incident happens at 2AM in San Francisco, the system could automatically ping someone in a different region who's skilled and online instead of waiting for a local engineer to wake up. Basically, AI could make sure incidents go to the *right* person, not just *any* person at the best time.
+Right now, incidents just trigger a standard email based on priority and categor, but AI could take that to the next level. Instead of just alerting whoever's on the list, an AI agent could route incidents based on who’s actually available, what timezone they’re in, and which engineers have handled similar issues before. Over time it could even learn who resolves issues fastest and prioritize them first. That would help cut down response time and help avoid escalation. For example, if a critical incident happens at 2AM in San Francisco, the system could automatically ping someone in a different region who's skilled and online instead of waiting for a local engineer to wake up. Basically, AI could make sure incidents go to the *right* person, not just *any* person at the best time.
 
 ---
 
 ## 💭 What I Took Away
 
-This project reminded me that the smallest missing piece like a broken email alert can have a massive impact. I didn’t just fix a flow, I designed something that could actually prevent chaos. And that’s what I love about tech.. solving problems that matter, one workflow at a time.
+This project reminded me that the smallest missing piece like a broken email alert can have a massive impact. I didn’t just fix a flow, I designed something that could actually prevent chaos. That’s what I love about tech.. solving problems that matter, one workflow at a time.
