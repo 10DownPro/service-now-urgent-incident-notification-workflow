@@ -1,6 +1,6 @@
 # 🚨 Preventing SLA Breaches with a Critical Alert Workflow in ServiceNow
 
-When a network outage hit Uber's San Francisco data center and went unnoticed for two hours, the business took a hit. Thousands of riders and drivers were affected, and Uber faced revenue loss and regulatory heat all because a critical alert never reached the right people.
+*Scenario:** When a network outage hit Uber's San Francisco data center and went unnoticed for two hours, the business took a hit. Thousands of riders and drivers were affected, and Uber faced revenue loss and regulatory heat all because a critical alert never reached the right people.
 
 This project simulates the fix. I used ServiceNow's Flow Designer to build an automated workflow that detects critical network incidents and instantly sends email alerts to the Networking Operations team. It’s simple, but powerful, and built to make sure engineers don’t miss what matters most.
 
