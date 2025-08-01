@@ -26,7 +26,7 @@ This project simulates the fix. I used ServiceNow's Flow Designer to build an au
 
 ---
 
-## 🧨 What Was Broken (Before the Fix)
+## 💢 What Was Broken (Before the Fix)
 
 This is what the original flow looked like before I made any changes. It wasn't filtering for critical network incidents, so no alerts were getting triggered when they should’ve.
 
