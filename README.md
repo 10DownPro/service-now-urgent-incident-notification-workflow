@@ -105,9 +105,9 @@ function onCondition() {
 
 | View | Screenshot |
 |------|------------|
-| ⚙️ **UI Policy Conditions Setup**<br><sub>Runs when asset type = Laptop</sub> | ![UI Policy Conditions](https://github.com/user-attachments/assets/a2a1c452-230a-43e4-89a9-d9e401d2052e) |
-| 💬 **Script Tab with Message**<br><sub>Warns if serial number has letters</sub> | ![Script Tab](https://github.com/user-attachments/assets/4083eb63-405e-40be-854c-5078a8eea5d5) |
-| 🖥️ **Warning Displayed on Form**<br><sub>Shows validation message on bad input</sub> | ![Form Warning](https://github.com/user-attachments/assets/ccad7300-520b-453c-854d-8b3a0ec902eb) |
+| ⚙️ **UI Policy Conditions Setup**<br><sub>Runs if priority field is less fhan critical when assigjed to Network Ops team</sub> | ![UI Policy Conditions](https://github.com/user-attachments/assets/a2a1c452-230a-43e4-89a9-d9e401d2052e) |
+| 💬 **Script Tab with Message**<br><sub>Warns user to confirm whether issue is critical or not</sub> | ![Script Tab](https://github.com/user-attachments/assets/4083eb63-405e-40be-854c-5078a8eea5d5) |
+| 🖥️ **Warning Displayed on Form**<br><sub>Shows warning message to user</sub> | ![Form Warning](https://github.com/user-attachments/assets/ccad7300-520b-453c-854d-8b3a0ec902eb) |
 
 ---
 
